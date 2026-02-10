@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>교화연구</title>
+    <link rel="stylesheet" href="css/flipbook.skin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+<div id="loading-overlay">
+    <div class="spinner"></div>
+    <p>페이지를 불러오는 중입니다...</p>
+</div>
+
+<div id="main-container">
+    <div id="book-viewport">
+        <div id="book"></div>
+    </div>
+
+<div id="ui-footer">
+    <div class="ui-group mobile-hide">
+        <span id="page-label-spread">1 / 1</span>
+    </div>
+
+    <div class="slider-container">
+        <div id="slider-tooltip">1</div>
+        <input type="range" id="page-slider" min="1" max="1" value="1">
+    </div>
+
+    <div class="ui-group main-controls">
+        <button id="btnPrev" class="primary-btn">◀ <span>이전</span></button>
+        
+        <div class="footer-utils">
+            <button id="btnZoomIn" class="util-btn" title="확대">🔍</button>
+            <button id="btnSound" class="util-btn" title="소리">🔊</button>
+            <button id="btnAnim" class="util-btn" title="효과">✨</button>
+            <button id="btnHelp" class="util-btn" title="도움말">❓</button>
+        </div>
+
+        <button id="btnNext" class="primary-btn"><span>다음</span> ▶</button>
+        <div class="divider"></div>
+        <button id="thumb-toggle" class="menu-btn">전체 목차</button>
+    </div>
+</div>
+
+<div id="help-modal" class="modal-overlay">
+    <div class="modal-content">
+        <h2>📖 플립북 사용 방법</h2>
+        <div class="help-section">
+            <h3>💻 PC (컴퓨터)</h3>
+            <ul>
+                <li><strong>페이지 넘기기:</strong> 마우스 휠을 아래로 굴리거나 키보드 화살표를 누르세요.</li>
+                <li><strong>화면 확대:</strong> 책을 두 번 클릭하거나 [🔍 크게보기] 버튼을 누르세요.</li>
+            </ul>
+        </div>
+        <div class="help-section">
+            <h3>📱 모바일 / 태블릿</h3>
+            <ul>
+                <li><strong>페이지 넘기기:</strong> 화면 좌우를 가볍게 터치하거나 옆으로 미세요.</li>
+                <li><strong>화면 확대:</strong> 화면을 두 번 툭툭 두드리면 크게 보입니다.</li>
+                <li><strong>자동 최적화:</strong> 폰을 세우면 1장, 눕히면 2장씩 자동으로 바뀝니다.</li>
+            </ul>
+        </div>
+        <button id="btnCloseHelp">닫기</button>
+    </div>
+</div>
+
+<div id="thumb-panel">
+    <div id="thumb-track"></div>
+    <div id="thumb-scroll-container">
+        <div id="thumb-scrollbar"></div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/turn.min.js"></script>
+<script src="js/config.js"></script> 
+<script src="js/zoom-pan.js"></script>
+<script src="js/flipbook.js"></script>
+<audio id="audio-flip" src="sounds/page-flip.mp3" preload="auto"></audio>
+</body>
+</html>
